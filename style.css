@@ -1,80 +1,62 @@
-:root {
-  --bg-1: #0a0a0f;
-  --bg-2: #12121a;
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.1);
-  --text: #f0f0f5;
-  --text-muted: #a0a0b0;
-  --accent: #d4af37;
-  --shadow: rgba(0, 0, 0, 0.3);
-}
-
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Noto Nastaliq Urdu', serif;
-  background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
-  color: var(--text);
-  line-height: 1.8;
-  min-height: 100vh;
-  direction: rtl;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: #fff;
 }
 
-header {
+/* Header */
+.header {
   text-align: center;
-  padding: 3rem 1rem;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #facc15;
 }
 
-header h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-  color: var(--accent);
+/* Dua Card */
+.card {
+  background: #1e293b;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  transition: 0.3s;
 }
 
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.card:hover {
+  transform: scale(1.03);
 }
 
-.dua-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  border-right: 4px solid var(--accent);
-  border-radius: 16px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 8px 32px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dua-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px var(--shadow);
-}
-
-.dua-arabic {
-  font-size: clamp(1.4rem, 4vw, 1.8rem);
+/* Arabic Text */
+.arabic {
+  font-size: 24px;
   text-align: right;
-  margin-bottom: 1rem;
-  line-height: 2;
+  color: #22c55e;
+  margin-bottom: 10px;
 }
 
-.dua-urdu {
-  font-size: 1rem;
-  color: var(--text-muted);
-  text-align: right;
+/* Urdu Translation */
+.urdu {
+  font-size: 16px;
+  color: #e2e8f0;
+  margin-bottom: 10px;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+/* Reference */
+.ref {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Search Bar */
+.search {
+  width: 90%;
+  margin: 15px auto;
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
 }

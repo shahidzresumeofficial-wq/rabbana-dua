@@ -5,30 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ربنا دعا کلیکشن</title>
 <style>
-  body { font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #fff; margin: 0; padding: 20px; text-align: center; }
-  h1 { color: #ffd700; font-size: 28px; margin-bottom: 10px; text-shadow: 0 0 10px #ffd700; }
-  p { font-size: 16px; opacity: 0.9; }
-  .card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; padding: 20px; margin: 20px 0; backdrop-filter: blur(10px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-  .arabic { font-size: 22px; color: #ffd700; line-height: 2; }
-  .urdu { font-size: 16px; margin-top: 10px; }
-  .btn { background: #ffd700; color: #000; border: none; padding: 12px 25px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; }
-  .btn:hover { background: #ffea00; }
+body{font-family:'Noto Nastaliq Urdu',serif;background:#1a2a3a;color:#fff;margin:0;padding:20px;text-align:center}
+h1{color:#ffd700;text-shadow:0 0 10px #ffd700}
+.dua-card{background:#2a3a4a;border:1px solid #ffd700;border-radius:15px;padding:20px;margin:15px 0;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
+.dua-card h2{color:#ffd700;font-size:24px;margin:0 0 10px 0}
+.dua-card p{font-size:18px;line-height:1.8;margin:10px 0}
+button{background:#ffd700;color:#1a2a3a;border:none;padding:10px 20px;border-radius:10px;font-size:16px;font-weight:bold;cursor:pointer}
+button.read{background:#555;color:#aaa}
 </style>
 </head>
 <body>
-  <h1>🤲 ربنا دعا کلیکشن</h1>
-  <p>اللّہ پاک کے فضل سے سب سے اعلیٰ دعاؤں کا مجموعہ</p>
-  
-  <div class="card">
-    <div class="arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</div>
-    <div class="urdu">اے ہمارے رب! ہمیں دنیا میں بھی بھلائی دے اور آخرت میں بھی بھلائی دے، اور ہمیں آگ کے عذاب سے بچا۔</div>
-    <button class="btn" onclick="alert('دعا پڑھ لی گئی۔ اللّہ قبول فرمائے آمین')">پڑھ لی</button>
-  </div>
+<h1>ربنا دعا کلیکشن 🤲</h1>
 
-  <div class="card">
-    <div class="arabic">رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا</div>
-    <div class="urdu">اے ہمارے رب! جب تو نے ہمیں ہدایت دے دی ہے تو ہمارے دلوں کو ٹیڑھا نہ کرنا۔</div>
-    <button class="btn" onclick="alert('دعا پڑھ لی گئی۔ اللّہ قبول فرمائے آمین')">پڑھ لی</button>
-  </div>
+<div class="dua-card"><h2>رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</h2><p>اے ہمارے رب! ہمیں دنیا میں بھی بھلائی دے اور آخرت میں بھی بھلائی دے، اور ہمیں آگ کے عذاب سے بچا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا</h2><p>اے ہمارے رب! جب تو نے ہمیں ہدایت دے دی ہے تو ہمارے دلوں کو ٹیڑھا نہ کرنا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا</h2><p>اے ہمارے رب! ہمارے گناہ اور ہمارے کام میں ہماری زیادتی معاف فرما دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا هَبْ لَنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا</h2><p>اے ہمارے رب! ہمیں اپنے پاس سے رحمت عطا فرما اور ہمارے کام میں ہمارے لیے راہنمائی مہیا کر۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ</h2><p>اے ہمارے رب! ہم سے جہنم کا عذاب پھیر دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ</h2><p>اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا اكْشِفْ عَنَّا الْعَذَابَ إِنَّا مُؤْمِنُونَ</h2><p>اے ہمارے رب! ہم سے عذاب ہٹا دے، بے شک ہم ایمان لانے والے ہیں۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ</h2><p>اے ہمارے رب! ہم سے قبول فرما، بے شک تو ہی سننے والا، جاننے والا ہے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا</h2><p>اے ہمارے رب! ہم پر صبر انڈیل دے اور ہمارے قدم جما دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<div class="dua-card"><h2>رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا</h2><p>اے ہمارے رب! اگر ہم بھول جائیں یا غلطی کر بیٹھیں تو ہماری گرفت نہ فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+
+<script>
+function markRead(btn){btn.classList.add('read');btn.innerText='✓ پڑھ لیا'}
+</script>
 </body>
 </html>

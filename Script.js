@@ -1,4 +1,4 @@
-const searchInput = document.getElementById("search");
+<link rel="manifest" href="manifest.json">const searchInput = document.getElementById("search");
 
 searchInput.addEventListener("keyup", function () {
   const value = this.value.toLowerCase();

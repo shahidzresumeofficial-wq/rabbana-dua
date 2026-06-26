@@ -3,39 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ربنا دعا کلیکشن</title>
+<title>اسلامی کلیکشن - شاہدزادہ</title>
 <style>
 body{font-family:'Noto Nastaliq Urdu',serif;background:#1a2a3a;color:#fff;margin:0;padding:20px;text-align:center}
-h1{color:#ffd700;text-shadow:0 0 10px #ffd700}
-.dua-card{background:#2a3a4a;border:1px solid #ffd700;border-radius:15px;padding:20px;margin:15px 0;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-.dua-card h2{color:#ffd700;font-size:24px;margin:0 0 10px 0}
-.dua-card p{font-size:18px;line-height:1.8;margin:10px 0}
-button{background:#ffd700;color:#1a2a3a;border:none;padding:10px 20px;border-radius:10px;font-size:16px;font-weight:bold;cursor:pointer}
+h1{color:#ffd700;text-shadow:0 0 10px #ffd700;font-size:28px}
+h2{color:#87ceeb;border-bottom:2px solid #ffd700;padding-bottom:10px;margin-top:40px}
+.card{background:#2a3a4a;border:1px solid #ffd700;border-radius:15px;padding:15px;margin:12px 0;text-align:right}
+.card h3{color:#ffd700;margin:0 0 8px 0;font-size:20px}
+.card p{font-size:16px;line-height:1.8;margin:5px 0}
+button{background:#ffd700;color:#1a2a3a;border:none;padding:8px 15px;border-radius:8px;font-weight:bold;cursor:pointer}
 button.read{background:#555;color:#aaa}
+img{max-width:100%;border-radius:10px;margin:10px 0}
+nav{background:#0f1a24;padding:10px;border-radius:10px;position:sticky;top:0}
+nav a{color:#ffd700;margin:0 8px;text-decoration:none;font-weight:bold;font-size:14px}
+.footer{background:#0f1a24;border-top:2px solid #ffd700;padding:20px;margin-top:40px;border-radius:15px}
+.footer a{color:#25D366;font-weight:bold;text-decoration:none;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
-<h1>ربنا دعا کلیکشن 🤲</h1>
+<h1>اسلامی کلیکشن 📖</h1>
+<nav>
+<a href="#duas">40 دعائیں</a> |
+<a href="#namaz">نماز</a> |
+<a href="#stories">کہانیاں</a> |
+<a href="#asma">99 نام اللہ</a> |
+<a href="#asma2">99 نام محمد ﷺ</a> |
+<a href="#contact">طلب دعا</a>
+</nav>
 
-<div class="dua-card"><h2>رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</h2><p>اے ہمارے رب! ہمیں دنیا میں بھی بھلائی دے اور آخرت میں بھی بھلائی دے، اور ہمیں آگ کے عذاب سے بچا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<h2 id="duas">🤲 40 ربنا کی دعائیں قرآن سے</h2>
+<div class="card"><h3>1. رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً</h3><p>اے ہمارے رب! ہمیں دنیا و آخرت میں بھلائی دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>2. رَبَّنَا لَا تُزِغْ قُلُوبَنَا</h3><p>اے ہمارے رب! ہدایت کے بعد دلوں کو ٹیڑھا نہ کر۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>3. رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا</h3><p>اے ہمارے رب! ہمارے گناہ معاف فرما دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>4. رَبَّنَا هَبْ لَنَا مِن لَّدُنكَ رَحْمَةً</h3><p>اے ہمارے رب! اپنے پاس سے رحمت عطا فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>5. رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ</h3><p>اے ہمارے رب! جہنم کا عذاب ہم سے پھیر دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>6. رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا قُرَّةَ أَعْيُنٍ</h3><p>اے ہمارے رب! بیوی اولاد سے آنکھوں کی ٹھنڈک دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>7. رَبَّنَا اكْشِفْ عَنَّا الْعَذَابَ</h3><p>اے ہمارے رب! ہم سے عذاب ہٹا دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>8. رَبَّنَا تَقَبَّلْ مِنَّا</h3><p>اے ہمارے رب! ہم سے قبول فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>9. رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا</h3><p>اے ہمارے رب! ہم پر صبر انڈیل دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>10. رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا</h3><p>اے ہمارے رب! بھول چوک پر گرفت نہ فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>11. رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا</h3><p>اے ہمارے رب! ہم پر بھاری بوجھ نہ ڈال۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>12. رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ</h3><p>اے ہمارے رب! وہ بوجھ ہم پر نہ ڈال جس کی طاقت ہم میں نہیں۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>13. رَبَّنَا وَاعْفُ عَنَّا وَاغْفِرْ لَنَا</h3><p>اے ہمارے رب! ہم سے درگزر فرما اور معاف کر دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>14. رَبَّنَا ظَلَمْنَا أَنفُسَنَا</h3><p>اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>15. رَبَّنَا لَا تَجْعَلْنَا مَعَ الْقَوْمِ الظَّالِمِينَ</h3><p>اے ہمارے رب! ہمیں ظالموں کے ساتھ نہ کر۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>16. رَبَّنَا افْتَحْ بَيْنَنَا بِالْحَقِّ</h3><p>اے ہمارے رب! ہمارے درمیان حق کے ساتھ فیصلہ فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>17. رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَتَوَفَّنَا مُسْلِمِينَ</h3><p>اے ہمارے رب! ہم پر صبر ڈال اور ہمیں مسلمان رکھ۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>18. رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلْقَوْمِ الظَّالِمِينَ</h3><p>اے ہمارے رب! ہمیں ظالموں کے لیے فتنہ نہ بنا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>19. رَبَّنَا وَنَجِّنَا بِرَحْمَتِكَ</h3><p>اے ہمارے رب! اپنی رحمت سے ہمیں نجات دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>20. رَبَّنَا آمَنَّا فَاغْفِرْ لَنَا</h3><p>اے ہمارے رب! ہم ایمان لائے، ہمیں معاف کر دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>21. رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ</h3><p>اے ہمارے رب! جہنم کے عذاب کو ہم سے دور کر دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>22. رَبَّنَا هَبْ لَنَا مِنَ الصَّالِحِينَ</h3><p>اے ہمارے رب! ہمیں نیک اولاد عطا فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>23. رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ</h3><p>اے ہمارے رب! ہم سے قبول فرما، تو سننے والا ہے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>24. رَبَّنَا وَاجْعَلْنَا مُسْلِمَيْنِ لَكَ</h3><p>اے ہمارے رب! ہمیں اپنا فرماں بردار بنا دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>25. رَبَّنَا أَتْمِمْ لَنَا نُورَنَا</h3><p>اے ہمارے رب! ہمارے لیے ہمارا نور مکمل کر دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>26. رَبَّنَا إِنَّنَا آمَنَّا فَاغْفِرْ لَنَا</h3><p>اے ہمارے رب! ہم ایمان لائے، ہمیں بخش دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>27. رَبَّنَا آمَنَّا فَاكْتُبْنَا مَعَ الشَّاهِدِينَ</h3><p>اے ہمارے رب! ہم ایمان لائے، ہمیں گواہوں میں لکھ لے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>28. رَبَّنَا مَا خَلَقْتَ هَٰذَا بَاطِلًا</h3><p>اے ہمارے رب! تو نے یہ بے فائدہ نہیں بنایا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>29. رَبَّنَا إِنَّكَ مَن تُدْخِلِ النَّارَ فَقَدْ أَخْزَيْتَهُ</h3><p>اے ہمارے رب! جسے تو آگ میں ڈالے اسے رسوا کیا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>30. رَبَّنَا إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِي لِلْإِيمَانِ</h3><p>اے ہمارے رب! ہم نے پکارنے والے کو سنا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>31. رَبَّنَا فَاغْفِرْ لَنَا ذُنُوبَنَا</h3><p>اے ہمارے رب! ہمارے گناہ معاف فرما دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>32. رَبَّنَا وَآتِنَا مَا وَعَدتَّنَا</h3><p>اے ہمارے رب! ہمیں وہ عطا کر جس کا تو نے وعدہ کیا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>33. رَبَّنَا أَخْرِجْنَا مِنْ هَٰذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا</h3><p>اے ہمارے رب! ہمیں اس ظالم بستی سے نکال دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>34. رَبَّنَا عَلَيْكَ تَوَكَّلْنَا</h3><p>اے ہمارے رب! ہم نے تجھ پر بھروسہ کیا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>35. رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِينَ كَفَرُوا</h3><p>اے ہمارے رب! ہمیں کافروں کے لیے فتنہ نہ بنا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>36. رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا</h3><p>اے ہمارے رب! ہمیں اور ہمارے بھائیوں کو بخش دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>37. رَبَّنَا وَسِعْتَ كُلَّ شَيْءٍ رَّحْمَةً وَعِلْمًا</h3><p>اے ہمارے رب! تیری رحمت ہر چیز پر ہے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>38. رَبَّنَا وَأَدْخِلْهُمْ جَنَّاتِ عَدْنٍ</h3><p>اے ہمارے رب! انہیں ہمیشہ کی جنتوں میں داخل فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>39. رَبَّنَا اكْشِفْ عَنَّا الْعَذَابَ إِنَّا مُؤْمِنُونَ</h3><p>اے ہمارے رب! عذاب ہٹا دے، ہم ایمان لائے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="card"><h3>40. رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا</h3><p>اے ہمارے رب! ہدایت کے بعد دل ٹیڑھا نہ کرنا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
 
-<div class="dua-card"><h2>رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا</h2><p>اے ہمارے رب! جب تو نے ہمیں ہدایت دے دی ہے تو ہمارے دلوں کو ٹیڑھا نہ کرنا۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<h2 id="namaz">🕌 نماز کا طریقہ تصویروں کے ساتھ</h2>
+<div class="card">
+<h3>1. نیت اور تکبیر تحریمہ</h3>
+<p>دل میں نیت کریں اور "اللہ اکبر" کہہ کر ہاتھ کانوں تک اٹھائیں۔</p>
+<img src="https://i.imgur.com/8Qf5b3L.png" alt="تکبیر تحریمہ">
+<h3>2. قیام، رکوع، سجدہ</h3>
+<p>سورہ فاتحہ پڑھیں، رکوع کریں، سجدہ کریں۔</p>
+<img src="https://i.imgur.com/3YkZ9dP.png" alt="نماز کے ارکان">
+</div>
 
-<div class="dua-card"><h2>رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا</h2><p>اے ہمارے رب! ہمارے گناہ اور ہمارے کام میں ہماری زیادتی معاف فرما دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<h2 id="stories">📚 اسلامی اخلاقی کہانیاں</h2>
+<div class="card">
+<h3>1. سچ بولنے کا فائدہ</h3>
+<p>ایک بچے نے سچ بول کر تاجر کا کھویا ہوا سونا واپس کیا۔ اللہ نے اس کے رزق میں برکت دے دی۔ سبق: سچائی ہمیشہ کامیاب کرتی ہے۔</p>
+</div>
+<div class="card">
+<h3>2. صبر کا پھل</h3>
+<p>ایک غریب کسان نے فصل برباد ہونے پر صبر کیا۔ اگلے سال اللہ نے اسے دگنا عطا کیا۔ سبق: صبر کا پھل میٹھا ہوتا ہے۔</p>
+</div>
+<div class="card">
+<h3>3. امانت داری</h3>
+<p>حضرت عمرؓ نے رات کو دیکھا ایک عورت دودھ میں پانی ملا رہی تھی۔ بیٹی نے کہا اللہ دیکھ رہا ہے۔ سبق: اللہ ہر جگہ دیکھ رہا ہے۔</p>
+</div>
 
-<div class="dua-card"><h2>رَبَّنَا هَبْ لَنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا</h2><p>اے ہمارے رب! ہمیں اپنے پاس سے رحمت عطا فرما اور ہمارے کام میں ہمارے لیے راہنمائی مہیا کر۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<h2 id="asma">✨ اللہ کے 99 نام</h2>
+<div class="grid">
+<div class="card"><h3>1. الرَّحْمَٰنُ</h3><p>بہت مہربان</p></div>
+<div class="card"><h3>2. الرَّحِيمُ</h3><p>نہایت رحم والا</p></div>
+<div class="card"><h3>3. الْمَلِكُ</h3><p>بادشاہ</p></div>
+<div class="card"><h3>4. الْقُدُّوسُ</h3><p>پاک</p></div>
+<div class="card"><h3>5. السَّلَامُ</h3><p>سلامتی والا</p></div>
+<div class="card"><h3>6. الْمُؤْمِنُ</h3><p>امان دینے والا</p></div>
+<div class="card"><h3>7. الْمُهَيْمِنُ</h3><p>نگہبان</p></div>
+<div class="card"><h3>8. الْعَزِيزُ</h3><p>زبردست</p></div>
+<div class="card"><h3>9. الْجَبَّارُ</h3><p>زور آور</p></div>
+<div class="card"><h3>10. الْمُتَكَبِّرُ</h3><p>بڑائی والا</p></div>
+</div>
+<p>باقی 89 نام بھی اسی طرح شامل کیے جا سکتے ہیں۔</p>
 
-<div class="dua-card"><h2>رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ</h2><p>اے ہمارے رب! ہم سے جہنم کا عذاب پھیر دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<h2 id="asma2">🌙 محمد ﷺ کے 99 نام</h2>
+<div class="grid">
+<div class="card"><h3>1. مُحَمَّدٌ</h3><p>بہت تعریف کیا گیا</p></div>
+<div class="card"><h3>2. أَحْمَدُ</h3><p>بہت تعریف کرنے والا</p></div>
+<div class="card"><h3>3. مَاحِي</h3><p>کفر کو مٹانے والے</p></div>
+<div class="card"><h3>4. حَاشِرٌ</h3><p>لوگوں کو جمع کرنے والے</p></div>
+<div class="card"><h3>5. عَاقِبٌ</h3><p>سب سے آخر میں آنے والے</p></div>
+<div class="card"><h3>6. نَبِيُّ الرَّحْمَةِ</h3><p>رحمت والے نبی</p></div>
+<div class="card"><h3>7. نَبِيُّ التَّوْبَةِ</h3><p>توبہ والے نبی</p></div>
+<div class="card"><h3>8. نَبِيُّ الْمَلَاحِمِ</h3><p>جنگوں والے نبی</p></div>
+<div class="card"><h3>9. رَءُوفٌ</h3><p>نرم دل</p></div>
+<div class="card"><h3>10. رَحِيمٌ</h3><p>مہربان</p></div>
+</div>
+<p>باقی 89 نام بھی اسی طرح شامل کیے جا سکتے ہیں۔</p>
 
-<div class="dua-card"><h2>رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ</h2><p>اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
-
-<div class="dua-card"><h2>رَبَّنَا اكْشِفْ عَنَّا الْعَذَابَ إِنَّا مُؤْمِنُونَ</h2><p>اے ہمارے رب! ہم سے عذاب ہٹا دے، بے شک ہم ایمان لانے والے ہیں۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
-
-<div class="dua-card"><h2>رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ</h2><p>اے ہمارے رب! ہم سے قبول فرما، بے شک تو ہی سننے والا، جاننے والا ہے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
-
-<div class="dua-card"><h2>رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا</h2><p>اے ہمارے رب! ہم پر صبر انڈیل دے اور ہمارے قدم جما دے۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
-
-<div class="dua-card"><h2>رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا</h2><p>اے ہمارے رب! اگر ہم بھول جائیں یا غلطی کر بیٹھیں تو ہماری گرفت نہ فرما۔</p><button onclick="markRead(this)">پڑھ لی</button></div>
+<div class="footer" id="contact">
+<h2>🤲 طلب دعا</h2>
+<p>اس پروجیکٹ کو بنانے والے:</p>
+<h3>شاہدزادہ</h3>
+<p>دعاؤں میں یاد رکھیے گا۔</p>
+<p>رابطہ واٹس ایپ: <a href="https://wa.me/923473744995" target="_blank">0347-3744995</a></p>
+</div>
 
 <script>
 function markRead(btn){btn.classList.add('read');btn.innerText='✓ پڑھ لیا'}

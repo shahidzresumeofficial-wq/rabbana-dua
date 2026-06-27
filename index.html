@@ -3,334 +3,382 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اسلامی ایپ</title>
-<link rel="stylesheet" href="style.css">
+
+<title>99 اسماء الحسنیٰ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family:'Noto Nastaliq Urdu', serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+header {
+    text-align:center;
+    padding:20px;
+}
+
+.container {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    padding:15px;
+}
+
+.card {
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:scale(1.05);
+}
+
+.name {
+    font-size:24px;
+    color:#00ffd5;
+}
+
+.meaning {
+    font-size:16px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-<h1>📖 اسلامی ایپ</h1>
-
-<div class="menu">
-<button onclick="showTab('home')">Home</button>
-<button onclick="showTab('rabbana')">Rabbana</button>
-<button onclick="showTab('names')">99 Names</button>
-<button onclick="showTab('duas')">Daily Duas</button>
-<button onclick="showTab('azkar')">Azkar</button>
-<button onclick="showTab('salah')">Namaz</button>
-<button onclick="showTab('food')">Food</button>
-<button onclick="showTab('sleep')">Sleep</button>
-<button onclick="showTab('events')">Events</button>
-</div>
+<h1>🕋 99 اسماء الحسنیٰ</h1>
 </header>
 
-<!-- HOME -->
-<div id="home" class="tab active">
-<h2>خوش آمدید</h2>
-<p>یہ مکمل اسلامی ایپ ہے</p>
-</div>
+<div class="container" id="list"></div>
 
-<!-- RABBANA -->
-<div id="rabbana" class="tab">
-<h2>🤲 Rabbana Duas</h2>
+<script>
 
-<div class="card">
-<h3>رَبَّنَا تَقَبَّلْ مِنَّا</h3>
-<p>اے ہمارے رب! ہم سے قبول فرما</p>
-<small>(البقرہ: 127)</small>
-</div>
+const names = [
+["الرحمن","نہایت مہربان"],
+["الرحيم","بڑا رحم کرنے والا"],
+["الملك","بادشاہ"],
+["القدوس","پاک ذات"],
+["السلام","سلامتی دینے والا"],
+["المؤمن","امن دینے والا"],
+["المهيمن","نگہبان"],
+["العزيز","زبردست"],
+["الجبار","زبردستی کرنے والا"],
+["المتكبر","بزرگی والا"],
 
-</div>
+["الخالق","پیدا کرنے والا"],
+["البارئ","ٹھیک طرح بنانے والا"],
+["المصور","صورت بنانے والا"],
+["الغفار","بہت بخشنے والا"],
+["القهار","غالب آنے والا"],
+["الوهاب","بہت دینے والا"],
+["الرزاق","رزق دینے والا"],
+["الفتاح","کھولنے والا"],
+["العليم","سب جاننے والا"],
+["القابض","تنگ کرنے والا"],
 
-<!-- NAMES -->
-<div id="names" class="tab">
-<h2>🕋 99 اسماء الحسنیٰ</h2>
+["الباسط","کشادگی دینے والا"],
+["الخافض","نیچا کرنے والا"],
+["الرافع","بلند کرنے والا"],
+["المعز","عزت دینے والا"],
+["المذل","ذلت دینے والا"],
+["السميع","سب سننے والا"],
+["البصير","سب دیکھنے والا"],
+["الحكم","فیصلہ کرنے والا"],
+["العدل","انصاف کرنے والا"],
+["اللطيف","باریک بین"],
 
-<div class="card">
-<h3>الرَّحْمَٰنُ</h3>
-<p>بہت مہربان</p>
-</div>
+["الخبير","خبردار"],
+["الحليم","بردبار"],
+["العظيم","عظمت والا"],
+["الغفور","بخشنے والا"],
+["الشكور","قدر کرنے والا"],
+["العلي","بلند"],
+["الكبير","بڑا"],
+["الحفيظ","حفاظت کرنے والا"],
+["المقيت","روزی دینے والا"],
+["الحسيب","حساب لینے والا"],
 
-</div>
+["الجليل","بزرگی والا"],
+["الكريم","کرم کرنے والا"],
+["الرقيب","نگہبان"],
+["المجيب","دعا قبول کرنے والا"],
+["الواسع","وسعت والا"],
+["الحكيم","حکمت والا"],
+["الودود","محبت کرنے والا"],
+["المجيد","بزرگی والا"],
+["الباعث","اٹھانے والا"],
+["الشهيد","حاضر و ناظر"],
 
-<!-- DAILY DUAS -->
-<div id="duas" class="tab">
-<h2>🌙 روزانہ کی دعائیں</h2>
-</div>
+["الحق","سچا"],
+["الوكيل","کارساز"],
+["القوي","طاقتور"],
+["المتين","مضبوط"],
+["الولي","دوست"],
+["الحميد","تعریف والا"],
+["المحصي","شمار کرنے والا"],
+["المبدئ","پہلی بار پیدا کرنے والا"],
+["المعيد","دوبارہ پیدا کرنے والا"],
+["المحيي","زندہ کرنے والا"],
 
-<!-- AZKAR -->
-<div id="azkar" class="tab">
-<h2>📿 اذکار</h2>
-</div>
+["المميت","مارنے والا"],
+["الحي","زندہ"],
+["القيوم","قائم رکھنے والا"],
+["الواجد","پانے والا"],
+["الماجد","بزرگی والا"],
+["الواحد","ایک"],
+["الاحد","یکتا"],
+["الصمد","بے نیاز"],
+["القادر","قدرت والا"],
+["المقتدر","بڑی قدرت والا"],
 
-<!-- SALAH -->
-<div id="salah" class="tab">
-<h2>🕌 نماز کے اذکار</h2>
-</div>
+["المقدم","آگے کرنے والا"],
+["المؤخر","پیچھے کرنے والا"],
+["الأول","سب سے پہلے"],
+["الآخر","سب کے بعد"],
+["الظاهر","ظاہر"],
+["الباطن","پوشیدہ"],
+["الوالي","مالک"],
+["المتعالي","بلند"],
+["البر","احسان کرنے والا"],
+["التواب","توبہ قبول کرنے والا"],
 
-<!-- FOOD -->
-<div id="food" class="tab">
-<h2>🍽 کھانے کی دعائیں</h2>
-</div>
+["المنتقم","بدلہ لینے والا"],
+["العفو","معاف کرنے والا"],
+["الرؤوف","شفقت کرنے والا"],
+["مالك الملك","بادشاہوں کا بادشاہ"],
+["ذوالجلال والإكرام","جلال و اکرام والا"],
+["المقسط","انصاف کرنے والا"],
+["الجامع","جمع کرنے والا"],
+["الغني","بے نیاز"],
+["المغني","غنی کرنے والا"],
+["المانع","روکنے والا"],
 
-<!-- SLEEP -->
-<div id="sleep" class="tab">
-<h2>🛏 سونے / اٹھنے کی دعائیں</h2>
-</div>
+["الضار","نقصان دینے والا"],
+["النافع","نفع دینے والا"],
+["النور","نور"],
+["الهادي","ہدایت دینے والا"],
+["البديع","نئی چیز بنانے والا"],
+["الباقي","ہمیشہ رہنے والا"],
+["الوارث","وارث"],
+["الرشيد","سیدھا راستہ دکھانے والا"],
+["الصبور","صبر کرنے والا"]
+];
 
-<!-- EVENTS -->
-<div id="events" class="tab">
-<h2>📖 اسلامی واقعات</h2>
+const container = document.getElementById("list");
+
+names.forEach(n=>{
+    container.innerHTML += `
+    <div class="card">
+        <div class="name">${n[0]}</div>
+        <div class="meaning">${n[1]}</div><!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>99 اسماء النبی ﷺ</title>
+
+<style>
+body {
+    margin:0;
+    font-family:'Noto Nastaliq Urdu', serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+header {
+    text-align:center;
+    padding:25px;
+    background:rgba(0,0,0,0.5);
+}
+
+header h1 {
+    color:gold;
+    margin:0;
+}
+
+.container {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.card {
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.card:hover {
+    transform:scale(1.05);
+    background:rgba(255,255,255,0.2);
+}
+
+.num {color:#00ffd5;font-size:18px;}
+.name {color:gold;font-size:22px;margin:10px 0;}
+.mean {color:#ddd;font-size:15px;}
+
+footer {
+    text-align:center;
+    padding:15px;
+    background:rgba(0,0,0,0.5);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌹 99 اسماء النبی ﷺ 🌹</h1>
+</header>
+
+<div class="container">
+
+<!-- 99 Names -->
+
+<div class="card"><div class="num">1</div><div class="name">محمد ﷺ</div><div class="mean">بہت تعریف کیے گئے</div></div>
+<div class="card"><div class="num">2</div><div class="name">احمد ﷺ</div><div class="mean">سب سے زیادہ حمد کرنے والے</div></div>
+<div class="card"><div class="num">3</div><div class="name">حامد</div><div class="mean">تعریف کرنے والے</div></div>
+<div class="card"><div class="num">4</div><div class="name">محمود</div><div class="mean">تعریف کیے گئے</div></div>
+<div class="card"><div class="num">5</div><div class="name">قاسم</div><div class="mean">تقسیم کرنے والے</div></div>
+<div class="card"><div class="num">6</div><div class="name">عاقب</div><div class="mean">آخری نبی</div></div>
+<div class="card"><div class="num">7</div><div class="name">خاتم النبیین</div><div class="mean">نبیوں کے ختم کرنے والے</div></div>
+<div class="card"><div class="num">8</div><div class="name">حاشر</div><div class="mean">جمع کرنے والے</div></div>
+<div class="card"><div class="num">9</div><div class="name">ماحی</div><div class="mean">کفر مٹانے والے</div></div>
+<div class="card"><div class="num">10</div><div class="name">نبی</div><div class="mean">خبر دینے والے</div></div>
+
+<div class="card"><div class="num">11</div><div class="name">رسول</div><div class="mean">پیغام پہنچانے والے</div></div>
+<div class="card"><div class="num">12</div><div class="name">شاہد</div><div class="mean">گواہی دینے والے</div></div>
+<div class="card"><div class="num">13</div><div class="name">مبشر</div><div class="mean">خوشخبری دینے والے</div></div>
+<div class="card"><div class="num">14</div><div class="name">نذیر</div><div class="mean">ڈرانے والے</div></div>
+<div class="card"><div class="num">15</div><div class="name">داعی</div><div class="mean">اللہ کی طرف بلانے والے</div></div>
+<div class="card"><div class="num">16</div><div class="name">سراج</div><div class="mean">چراغ</div></div>
+<div class="card"><div class="num">17</div><div class="name">منیر</div><div class="mean">روشن کرنے والے</div></div>
+<div class="card"><div class="num">18</div><div class="name">رؤف</div><div class="mean">نرم دل</div></div>
+<div class="card"><div class="num">19</div><div class="name">رحیم</div><div class="mean">رحم کرنے والے</div></div>
+<div class="card"><div class="num">20</div><div class="name">امین</div><div class="mean">امانت دار</div></div>
+
+<div class="card"><div class="num">21</div><div class="name">صادق</div><div class="mean">سچے</div></div>
+<div class="card"><div class="num">22</div><div class="name">مصدوق</div><div class="mean">سچے مانے گئے</div></div>
+<div class="card"><div class="num">23</div><div class="name">طہٰ</div><div class="mean">پاک</div></div>
+<div class="card"><div class="num">24</div><div class="name">یٰس</div><div class="mean">قرآنی نام</div></div>
+<div class="card"><div class="num">25</div><div class="name">مصطفیٰ</div><div class="mean">چنے ہوئے</div></div>
+<div class="card"><div class="num">26</div><div class="name">مجتبیٰ</div><div class="mean">منتخب</div></div>
+<div class="card"><div class="num">27</div><div class="name">حبیب اللہ</div><div class="mean">اللہ کے محبوب</div></div>
+<div class="card"><div class="num">28</div><div class="name">خلیل اللہ</div><div class="mean">اللہ کے دوست</div></div>
+<div class="card"><div class="num">29</div><div class="name">نجی اللہ</div><div class="mean">راز دار</div></div>
+<div class="card"><div class="num">30</div><div class="name">صفی اللہ</div><div class="mean">منتخب بندہ</div></div>
+
+<div class="card"><div class="num">31</div><div class="name">سید</div><div class="mean">سردار</div></div>
+<div class="card"><div class="num">32</div><div class="name">امام</div><div class="mean">پیشوا</div></div>
+<div class="card"><div class="num">33</div><div class="name">قائد</div><div class="mean">رہنما</div></div>
+<div class="card"><div class="num">34</div><div class="name">ناصر</div><div class="mean">مددگار</div></div>
+<div class="card"><div class="num">35</div><div class="name">منصور</div><div class="mean">مدد یافتہ</div></div>
+<div class="card"><div class="num">36</div><div class="name">غالب</div><div class="mean">غالب آنے والے</div></div>
+<div class="card"><div class="num">37</div><div class="name">نور</div><div class="mean">روشنی</div></div>
+<div class="card"><div class="num">38</div><div class="name">ہادی</div><div class="mean">ہدایت دینے والے</div></div>
+<div class="card"><div class="num">39</div><div class="name">مہدی</div><div class="mean">ہدایت یافتہ</div></div>
+<div class="card"><div class="num">40</div><div class="name">کریم</div><div class="mean">سخی</div></div>
+
+<div class="card"><div class="num">41</div><div class="name">جواد</div><div class="mean">سخاوت کرنے والے</div></div>
+<div class="card"><div class="num">42</div><div class="name">غفور</div><div class="mean">بخشنے والے</div></div>
+<div class="card"><div class="num">43</div><div class="name">شکور</div><div class="mean">شکر کرنے والے</div></div>
+<div class="card"><div class="num">44</div><div class="name">صبور</div><div class="mean">صبر کرنے والے</div></div>
+<div class="card"><div class="num">45</div><div class="name">عادل</div><div class="mean">انصاف کرنے والے</div></div>
+<div class="card"><div class="num">46</div><div class="name">حکیم</div><div class="mean">دانا</div></div>
+<div class="card"><div class="num">47</div><div class="name">فتاح</div><div class="mean">فتح دینے والے</div></div>
+<div class="card"><div class="num">48</div><div class="name">عزیز</div><div class="mean">عزت والے</div></div>
+<div class="card"><div class="num">49</div><div class="name">شریف</div><div class="mean">معزز</div></div>
+<div class="card"><div class="num">50</div><div class="name">عظیم</div><div class="mean">عظمت والے</div></div>
+
+<div class="card"><div class="num">51</div><div class="name">بر</div><div class="mean">نیک</div></div>
+<div class="card"><div class="num">52</div><div class="name">تقی</div><div class="mean">پرہیزگار</div></div>
+<div class="card"><div class="num">53</div><div class="name">زکی</div><div class="mean">پاک</div></div>
+<div class="card"><div class="num">54</div><div class="name">ولی</div><div class="mean">دوست</div></div>
+<div class="card"><div class="num">55</div><div class="name">حق</div><div class="mean">سچے</div></div>
+<div class="card"><div class="num">56</div><div class="name">مبین</div><div class="mean">واضح</div></div>
+<div class="card"><div class="num">57</div><div class="name">بشیر</div><div class="mean">خوشخبری دینے والے</div></div>
+<div class="card"><div class="num">58</div><div class="name">نذیر</div><div class="mean">ڈرانے والے</div></div>
+<div class="card"><div class="num">59</div><div class="name">رحمت للعالمین</div><div class="mean">تمام جہانوں کے لیے رحمت</div></div>
+<div class="card"><div class="num">60</div><div class="name">سید المرسلین</div><div class="mean">رسولوں کے سردار</div></div>
+
+<div class="card"><div class="num">61</div><div class="name">امام المتقین</div><div class="mean">پرہیزگاروں کے امام</div></div>
+<div class="card"><div class="num">62</div><div class="name">قائد الغر المحجلین</div><div class="mean">امت کے قائد</div></div>
+<div class="card"><div class="num">63</div><div class="name">شفیع</div><div class="mean">سفارش کرنے والے</div></div>
+<div class="card"><div class="num">64</div><div class="name">مشفع</div><div class="mean">جن کی سفارش قبول ہو</div></div>
+<div class="card"><div class="num">65</div><div class="name">طیب</div><div class="mean">پاکیزہ</div></div>
+<div class="card"><div class="num">66</div><div class="name">طاہر</div><div class="mean">پاک</div></div>
+<div class="card"><div class="num">67</div><div class="name">زاہد</div><div class="mean">دنیا سے بے رغبت</div></div>
+<div class="card"><div class="num">68</div><div class="name">عابد</div><div class="mean">عبادت کرنے والے</div></div>
+<div class="card"><div class="num">69</div><div class="name">ساجد</div><div class="mean">سجدہ کرنے والے</div></div>
+<div class="card"><div class="num">70</div><div class="name">راکع</div><div class="mean">رکوع کرنے والے</div></div>
+
+<div class="card"><div class="num">71</div><div class="name">ذاکر</div><div class="mean">ذکر کرنے والے</div></div>
+<div class="card"><div class="num">72</div><div class="name">شاکر</div><div class="mean">شکر گزار</div></div>
+<div class="card"><div class="num">73</div><div class="name">صابر</div><div class="mean">صبر کرنے والے</div></div>
+<div class="card"><div class="num">74</div><div class="name">متوکل</div><div class="mean">اللہ پر بھروسہ</div></div>
+<div class="card"><div class="num">75</div><div class="name">متین</div><div class="mean">مضبوط</div></div>
+<div class="card"><div class="num">76</div><div class="name">قوی</div><div class="mean">طاقتور</div></div>
+<div class="card"><div class="num">77</div><div class="name">امین اللہ</div><div class="mean">اللہ کے امین</div></div>
+<div class="card"><div class="num">78</div><div class="name">برہان</div><div class="mean">دلیل</div></div>
+<div class="card"><div class="num">79</div><div class="name">سراج اللہ</div><div class="mean">اللہ کا چراغ</div></div>
+<div class="card"><div class="num">80</div><div class="name">نور اللہ</div><div class="mean">اللہ کا نور</div></div>
+
+<div class="card"><div class="num">81</div><div class="name">رحمت</div><div class="mean">رحمت</div></div>
+<div class="card"><div class="num">82</div><div class="name">نعمت</div><div class="mean">نعمت</div></div>
+<div class="card"><div class="num">83</div><div class="name">ہدی</div><div class="mean">ہدایت</div></div>
+<div class="card"><div class="num">84</div><div class="name">دلیل</div><div class="mean">رہنمائی</div></div>
+<div class="card"><div class="num">85</div><div class="name">بشیر الامم</div><div class="mean">امتوں کے لیے خوشخبری</div></div>
+<div class="card"><div class="num">86</div><div class="name">نذیر الامم</div><div class="mean">امتوں کو ڈرانے والے</div></div>
+<div class="card"><div class="num">87</div><div class="name">خاتم الانبیاء</div><div class="mean">آخری نبی</div></div>
+<div class="card"><div class="num">88</div><div class="name">سید ولد آدم</div><div class="mean">تمام انسانوں کے سردار</div></div>
+<div class="card"><div class="num">89</div><div class="name">امام الانبیاء</div><div class="mean">نبیوں کے امام</div></div>
+<div class="card"><div class="num">90</div><div class="name">خطیب الانبیاء</div><div class="mean">نبیوں کے خطیب</div></div>
+
+<div class="card"><div class="num">91</div><div class="name">افضل الانبیاء</div><div class="mean">سب سے افضل</div></div>
+<div class="card"><div class="num">92</div><div class="name">خیر البشر</div><div class="mean">بہترین انسان</div></div>
+<div class="card"><div class="num">93</div><div class="name">اشرف المخلوقات</div><div class="mean">سب سے اشرف</div></div>
+<div class="card"><div class="num">94</div><div class="name">نور مجسم</div><div class="mean">مجسم نور</div></div>
+<div class="card"><div class="num">95</div><div class="name">رحمۃ مہداة</div><div class="mean">بھیجی گئی رحمت</div></div>
+<div class="card"><div class="num">96</div><div class="name">صاحب الشفاعة</div><div class="mean">شفاعت والے</div></div>
+<div class="card"><div class="num">97</div><div class="name">صاحب لواء الحمد</div><div class="mean">حمد کا جھنڈا</div></div>
+<div class="card"><div class="num">98</div><div class="name">صاحب المقام المحمود</div><div class="mean">مقام محمود والے</div></div>
+<div class="card"><div class="num">99</div><div class="name">امام الاولین والآخرین</div><div class="mean">سب کے امام</div></div>q
+یہ رہی آپ کی مکمل فائل! 🌿
+
+**فائل میں شامل ہے:**
+- **۴۰ ربنا دعائیں** — مکمل عربی متن کے ساتھ
+- **اردو ترجمہ** — ہر دعا کا مکمل ترجمہ
+- **حوالہ جات** — سورت کا نام اور آیت نمبر (جیسے سورۃ البقرہ: ۱۲۷)
+
+**ڈیزائن خصوصیات:**
+- گہرا سبز اور سنہری رنگ — اسلامی روایت کے مطابق
+- عربی کے لیے **Amiri** خط، اردو کے لیے **Noto Nastaliq**
+- ریسپونسیو گرڈ — موبائل اور ڈیسک ٹاپ دونوں پر خوبصورت
+- کارڈ ڈیزائن — ہر دعا الگ کارڈ میں نمبر اور حوالے کے ساتھ
 </div>
 
 <footer>
-<p>طالب دعا - شاہد زادہ</p>
-<p>📞 03448144167</p>
-<p>📞 03473744995</p>
+Shahid Zada Digital Empire 👑
 </footer>
 
-<script src="script.js"></script>
+</body>
+</html>
+    </div>`;
+});
+
+</script>
 
 </body>
-</html>div class="tab" id="names">
-<h2>🕋 99 اسماء الحسنیٰ</h2>
-
-<div class="dua">1. الرحمن — نہایت مہربان</div>
-<div class="dua">2. الرحيم — بڑا رحم کرنے والا</div>
-<div class="dua">3. الملك — بادشاہ</div>
-<div class="dua">4. القدوس — پاک</div>
-<div class="dua">5. السلام — سلامتی دینے والا</div>
-<div class="dua">6. المؤمن — امن دینے والا</div>
-<div class="dua">7. المهيمن — نگہبان</div>
-<div class="dua">8. العزيز — زبردست</div>
-<div class="dua">9. الجبار — طاقتور</div>
-<div class="dua">10. المتكبر — بزرگی والا</div>
-
-<div class="dua">11. الخالق — پیدا کرنے والا</div>
-<div class="dua">12. البارئ — بنانے والا</div>
-<div class="dua">13. المصور — صورت دینے والا</div>
-<div class="dua">14. الغفار — بہت بخشنے والا</div>
-<div class="dua">15. القهار — غالب آنے والا</div>
-<div class="dua">16. الوهاب — عطا کرنے والا</div>
-<div class="dua">17. الرزاق — رزق دینے والا</div>
-<div class="dua">18. الفتاح — کھولنے والا</div>
-<div class="dua">19. العليم — جاننے والا</div>
-<div class="dua">20. القابض — تنگ کرنے والا</div>
-
-<div class="dua">21. الباسط — کشادگی دینے والا</div>
-<div class="dua">22. الخافض — پست کرنے والا</div>
-<div class="dua">23. الرافع — بلند کرنے والا</div>
-<div class="dua">24. المعز — عزت دینے والا</div>
-<div class="dua">25. المذل — ذلت دینے والا</div>
-<div class="dua">26. السميع — سننے والا</div>
-<div class="dua">27. البصير — دیکھنے والا</div>
-<div class="dua">28. الحكم — فیصلہ کرنے والا</div>
-<div class="dua">29. العدل — انصاف کرنے والا</div>
-<div class="dua">30. اللطيف — مہربان</div>
-
-<div class="dua">31. الخبير — خبر رکھنے والا</div>
-<div class="dua">32. الحليم — بردبار</div>
-<div class="dua">33. العظيم — عظمت والا</div>
-<div class="dua">34. الغفور — بخشنے والا</div>
-<div class="dua">35. الشكور — قدر دان</div>
-<div class="dua">36. العلي — بلند</div>
-<div class="dua">37. الكبير — بڑا</div>
-<div class="dua">38. الحفيظ — حفاظت کرنے والا</div>
-<div class="dua">39. المقيت — روزی دینے والا</div>
-<div class="dua">40. الحسيب — حساب لینے والا</div>
-
-<div class="dua">41. الجليل — بزرگی والا</div>
-<div class="dua">42. الكريم — کرم کرنے والا</div>
-<div class="dua">43. الرقيب — نگہبان</div>
-<div class="dua">44. المجيب — دعا قبول کرنے والا</div>
-<div class="dua">45. الواسع — وسعت والا</div>
-<div class="dua">46. الحكيم — حکمت والا</div>
-<div class="dua">47. الودود — محبت کرنے والا</div>
-<div class="dua">48. المجيد — بزرگی والا</div>
-<div class="dua">49. الباعث — اٹھانے والا</div>
-<div class="dua">50. الشهيد — گواہ</div>
-
-<div class="dua">51. الحق — سچا</div>
-<div class="dua">52. الوكيل — کارساز</div>
-<div class="dua">53. القوي — طاقتور</div>
-<div class="dua">54. المتين — مضبوط</div>
-<div class="dua">55. الولي — مددگار</div>
-<div class="dua">56. الحميد — تعریف والا</div>
-<div class="dua">57. المحصي — شمار کرنے والا</div>
-<div class="dua">58. المبدئ — شروع کرنے والا</div>
-<div class="dua">59. المعيد — دوبارہ پیدا کرنے والا</div>
-<div class="dua">60. المحيي — زندہ کرنے والا</div>
-
-<div class="dua">61. المميت — مارنے والا</div>
-<div class="dua">62. الحي — زندہ</div>
-<div class="dua">63. القيوم — قائم رکھنے والا</div>
-<div class="dua">64. الواجد — پانے والا</div>
-<div class="dua">65. الماجد — بزرگی والا</div>
-<div class="dua">66. الواحد — ایک</div>
-<div class="dua">67. الاحد — اکیلا</div>
-<div class="dua">68. الصمد — بے نیاز</div>
-<div class="dua">69. القادر — قدرت والا</div>
-<div class="dua">70. المقتدر — اختیار والا</div>
-
-<div class="dua">71. المقدم — آگے کرنے والا</div>
-<div class="dua">72. المؤخر — پیچھے کرنے والا</div>
-<div class="dua">73. الأول — پہلا</div>
-<div class="dua">74. الآخر — آخر</div>
-<div class="dua">75. الظاهر — ظاہر</div>
-<div class="dua">76. الباطن — پوشیدہ</div>
-<div class="dua">77. الوالي — مالک</div>
-<div class="dua">78. المتعالي — بلند</div>
-<div class="dua">79. البر — احسان کرنے والا</div>
-<div class="dua">80. التواب — توبہ قبول کرنے والا</div>
-
-<div class="dua">81. المنتقم — بدلہ لینے والا</div>
-<div class="dua">82. العفو — معاف کرنے والا</div>
-<div class="dua">83. الرؤوف — نرم دل</div>
-<div class="dua">84. مالك الملك — بادشاہی کا مالک</div>
-<div class="dua">85. ذو الجلال والإكرام — بزرگی والا</div>
-<div class="dua">86. المقسط — انصاف کرنے والا</div>
-<div class="dua">87. الجامع — جمع کرنے والا</div>
-<div class="dua">88. الغني — بے نیاز</div>
-<div class="dua">89. المغني — غنی کرنے والا</div>
-<div class="dua">90. المانع — روکنے والا</div>
-
-<div class="dua">91. الضار — نقصان دینے والا</div>
-<div class="dua">92. النافع — فائدہ دینے والا</div>
-<div class="dua">93. النور — نور</div>
-<div class="dua">94. الهادي — ہدایت دینے والا</div>
-<div class="dua">95. البديع — نیا پیدا کرنے والا</div>
-<div class="dua">96. الباقي — باقی رہنے والا</div>
-<div class="dua">97. الوارث — وارث</div>
-<div class="dua">98. الرشيد — راہ دکھانے والا</div>
-<div class="dua">99. الصبور — صبر والا</div>
-
-</div>
-<div class="dua">
-اللهم صل على محمد وعلى آل محمد كما صليت على إبراهيم  
-<br>📖 حدیث: بخاری  
-<br>ترجمہ: اے اللہ! محمد ﷺ اور ان کی آل پر رحمت نازل فرما
-</div><div class="dua">آیت الکرسی (1 بار)</div>
-<div class="dua">سورۃ اخلاص (3 بار)</div>
-<div class="dua">سورۃ فلق (3 بار)</div>
-<div class="dua">سورۃ ناس (3 بار)</div>
-<div class="dua">سبحان الله (33)</div>
-<div class="dua">الحمدلله (33)</div>
-<div class="dua">الله اکبر (34)</div><div class="dua">اللهم باسمك أموت وأحيا</div>
-<div class="dua">الحمد لله الذي أحيانا بعد ما أماتنا</div><div class="card">
-<h3>رَبَّنَا تَقَبَّلْ مِنَّا</h3>
-<p>اے ہمارے رب! ہم سے قبول فرما</p>
-<small>(البقرہ: 127)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا لَا تُزِغْ قُلُوبَنَا</h3>
-<p>اے ہمارے رب! ہمارے دلوں کو ٹیڑھا نہ کر</p>
-<small>(آل عمران: 8)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا</h3>
-<p>اے ہمارے رب! ہمارے گناہ بخش دے</p>
-<small>(آل عمران: 16)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً</h3>
-<p>اے ہمارے رب! ہمیں دنیا و آخرت میں بھلائی دے</p>
-<small>(البقرہ: 201)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا لَا تُؤَاخِذْنَا</h3>
-<p>اے ہمارے رب! اگر ہم بھول جائیں تو ہمیں نہ پکڑ</p>
-<small>(البقرہ: 286)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا</h3>
-<p>اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک دے</p>
-<small>(الفرقان: 74)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا</h3>
-<p>اے ہمارے رب! ہم پر صبر نازل فرما</p>
-<small>(البقرہ: 250)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً</h3>
-<p>اے ہمارے رب! ہمیں ظالموں کے لیے آزمائش نہ بنا</p>
-<small>(یونس: 85)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ</h3>
-<p>اے ہمارے رب! مجھے اور میرے والدین کو بخش دے</p>
-<small>(ابراہیم: 41)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا إِنَّنَا آمَنَّا</h3>
-<p>اے ہمارے رب! ہم ایمان لائے، ہمیں بخش دے</p>
-<small>(آل عمران: 16)</small>
-</div><div class="card">
-<h3>رَبَّنَا ظَلَمْنَا أَنفُسَنَا</h3>
-<p>اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اگر تو نے ہمیں نہ بخشا اور ہم پر رحم نہ کیا تو ہم نقصان اٹھانے والوں میں سے ہوں گے</p>
-<small>(الأعراف: 23)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا لَا تَجْعَلْنَا مَعَ الْقَوْمِ الظَّالِمِينَ</h3>
-<p>اے ہمارے رب! ہمیں ظالم لوگوں کے ساتھ نہ کر</p>
-<small>(الأعراف: 47)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَتَوَفَّنَا مُسْلِمِينَ</h3>
-<p>اے ہمارے رب! ہم پر صبر نازل فرما اور ہمیں مسلمان ہونے کی حالت میں موت دے</p>
-<small>(الأعراف: 126)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلْقَوْمِ الظَّالِمِينَ</h3>
-<p>اے ہمارے رب! ہمیں ظالم لوگوں کے لیے آزمائش نہ بنا</p>
-<small>(یونس: 85)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا</h3>
-<p>اے ہمارے رب! ہم پر صبر نازل فرما اور ہمارے قدم جما دے</p>
-<small>(البقرہ: 250)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا لَا تُزِغْ قُلُوبَنَا</h3>
-<p>اے ہمارے رب! ہمارے دلوں کو ٹیڑھا نہ کر بعد اس کے کہ تو نے ہمیں ہدایت دی</p>
-<small>(آل عمران: 8)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا</h3>
-<p>اے ہمارے رب! ہمیں اور ہمارے ان بھائیوں کو بخش دے جو ہم سے پہلے ایمان لائے</p>
-<small>(الحشر: 10)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا إِنَّكَ جَامِعُ النَّاسِ</h3>
-<p>اے ہمارے رب! تو لوگوں کو ایک دن جمع کرنے والا ہے جس میں کوئی شک نہیں</p>
-<small>(آل عمران: 9)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا هَبْ لَنَا مِن لَّدُنكَ رَحْمَةً</h3>
-<p>اے ہمارے رب! ہمیں اپنی طرف سے رحمت عطا فرما</p>
-<small>(الکہف: 10)</small>
-</div>
-
-<div class="card">
-<h3>رَبَّنَا اكْشِفْ عَنَّا الْعَذَابَ</h3>
-<p>اے ہمارے رب! ہم سے عذاب دور کر دے، ہم ایمان لاتے ہیں</p>
-<small>(الدخان: 12)</small>
-</div>
+</html>

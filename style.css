@@ -5,105 +5,64 @@
   --gold: #FFD700;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Royal 3-Color Gradient BG */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   background-attachment: fixed;
   color: var(--text-light);
   font-family: 'Noto Nastaliq Urdu', serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   direction: rtl;
 }
 
-.container {
-  max-width: 700px;
-  margin: auto;
-}
+.container { max-width: 800px; margin: auto; padding: 20px; }
 
-header h1 {
+header {
   text-align: center;
-  color: var(--gold);
-  font-size: 2.8rem;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-  margin-bottom: 30px;
+  padding: 30px 20px;
+  background: rgba(0,0,0,0.3);
+  border-bottom: 2px solid var(--gold);
 }
+header h1 { color: var(--gold); font-size: 2.5rem; margin: 0; text-shadow: 0 0 15px var(--gold); }
+header p { color: #ddd; }
 
-.dua-card {
-  border-radius: 20px;
-  padding: 25px;
-  margin-bottom: 25px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Menu Navigation */
+nav {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  padding: 15px; background: rgba(0,0,0,0.5); position: sticky; top: 0; z-index: 10;
+}
+nav a {
+  color: white; text-decoration: none; padding: 8px 15px; border-radius: 20px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s;
+}
+nav a:hover { background: var(--gold); color: #000; }
+
+.section {
+  border-radius: 20px; padding: 25px; margin: 25px 0;
+  backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  transition: all 0.4s ease;
-  color: white;
 }
+.section h2 { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
 
-.dua-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+/* Har Section ka Alag Color */
+#rabbana { background: linear-gradient(45deg, #4158D0, #C850C0); }
+#asma { background: linear-gradient(45deg, #0093E9, #80D0C7); color: #111; }
+#durood { background: linear-gradient(45deg, #8BC6EC, #9599E2); }
+#azkar { background: linear-gradient(45deg, #FBAB7E, #F7CE68); color: #333; }
+#waqiat { background: linear-gradient(45deg, #85FFBD, #FFFB7D); color: #333; }
+
+.card {
+  background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; margin-bottom: 15px;
 }
-
-/* Har Card ka Alag Color */
-.dua-card:nth-child(1) { background: linear-gradient(45deg, #4158D0, #C850C0); }
-.dua-card:nth-child(2) { background: linear-gradient(45deg, #0093E9, #80D0C7); }
-.dua-card:nth-child(3) { background: linear-gradient(45deg, #8BC6EC, #9599E2); }
-.dua-card:nth-child(4) { background: linear-gradient(45deg, #FBAB7E, #F7CE68); color: #333; } /* Orange/Gold */
-.dua-card:nth-child(5) { background: linear-gradient(45deg, #85FFBD, #FFFB7D); color: #333; } /* Green/Yellow */
-.dua-card:nth-child(6) { background: linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5); }
-/* Aise aap 40 tak colors add kar sakte hain */
-
-.dua-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 10px;
-}
-
-.dua-number {
-  background: rgba(255, 255, 255, 0.9);
-  color: #1a2a6c;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 15px;
-  font-family: sans-serif;
-  flex-shrink: 0;
-  box-shadow: 0 0 10px white;
-}
-
-.dua-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--gold);
-}
-
-.arabic {
-  font-family: 'Amiri Quran', serif;
-  font-size: 1.8rem;
-  text-align: right;
-  line-height: 2.5;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.urdu {
-  font-size: 1.1rem;
-  text-align: right;
-  margin-top: 15px;
-  line-height: 2;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
+.arabic { font-family: 'Amiri Quran', serif; font-size: 1.7rem; text-align: right; line-height: 2.5; }
+.urdu { font-size: 1.1rem; text-align: right; margin-top: 10px; line-height: 2; }
+.ref { font-size: 0.9rem; color: var(--gold); text-align: left; }
 
 footer {
-  text-align: center;
-  margin-top: 40px;
-  color: var(--gold);
+  text-align: center; padding: 20px; margin-top: 30px;
+  background: rgba(0,0,0,0.5); border-top: 2px solid var(--gold);
 }
+footer a { color: var(--gold); text-decoration: none; font-weight: bold; }

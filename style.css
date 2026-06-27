@@ -1,83 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+:root {
+  --text-light: #FFFFFF;
+  --gold: #FFD700;
+}
+
+* { box-sizing: border-box; }
+
 body {
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Royal 3-Color Gradient BG */
+  background-attachment: fixed;
+  color: var(--text-light);
+  font-family: 'Noto Nastaliq Urdu', serif;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #020617;
-  color: #fff;
-}
-
-/* Header */
-.header {
-  text-align: center;
   padding: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  background: linear-gradient(135deg, #020617, #0f172a);
-  color: #facc15;
+  direction: rtl;
 }
 
-/* Search */
-.search {
-  width: 90%;
-  margin: 15px auto;
-  display: block;
-  padding: 12px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  background: #1e293b;
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+header h1 {
+  text-align: center;
+  color: var(--gold);
+  font-size: 2.8rem;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  margin-bottom: 30px;
+}
+
+.dua-card {
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
   color: white;
 }
 
-/* Cards */
-.card {
-  background: #0f172a;
-  margin: 15px;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  transition: 0.3s;
+.dua-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
-.card:hover {
-  transform: translateY(-5px);
+/* Har Card ka Alag Color */
+.dua-card:nth-child(1) { background: linear-gradient(45deg, #4158D0, #C850C0); }
+.dua-card:nth-child(2) { background: linear-gradient(45deg, #0093E9, #80D0C7); }
+.dua-card:nth-child(3) { background: linear-gradient(45deg, #8BC6EC, #9599E2); }
+.dua-card:nth-child(4) { background: linear-gradient(45deg, #FBAB7E, #F7CE68); color: #333; } /* Orange/Gold */
+.dua-card:nth-child(5) { background: linear-gradient(45deg, #85FFBD, #FFFB7D); color: #333; } /* Green/Yellow */
+.dua-card:nth-child(6) { background: linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5); }
+/* Aise aap 40 tak colors add kar sakte hain */
+
+.dua-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
 }
 
-/* Arabic */
+.dua-number {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a2a6c;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  font-family: sans-serif;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px white;
+}
+
+.dua-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
 .arabic {
-  font-size: 26px;
+  font-family: 'Amiri Quran', serif;
+  font-size: 1.8rem;
   text-align: right;
-  color: #22c55e;
-  margin-bottom: 10px;
+  line-height: 2.5;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Urdu */
 .urdu {
-  font-size: 16px;
-  color: #e2e8f0;
+  font-size: 1.1rem;
+  text-align: right;
+  margin-top: 15px;
+  line-height: 2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Reference */
-.ref {
-  font-size: 13px;
-  color: #94a3b8;
-  margin-top: 10px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #facc15;
-  color: black;
-  border-radius: 8px;
-  font-size: 12px;
-}
-
-/* Footer */
-.footer {
+footer {
   text-align: center;
-  padding: 20px;
-  background: #020617;
-  color: #94a3b8;
+  margin-top: 40px;
+  color: var(--gold);
 }
